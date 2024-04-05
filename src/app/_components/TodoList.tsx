@@ -2,8 +2,6 @@
 import { useState } from 'react';
 
 import { trpc } from '../_trpc/client';
-import { TodoRecord } from '@/server/xata';
-import { RecordArray, SelectedPick } from '@xata.io/client';
 import { serverClient } from '../_trpc/serverClient';
 
 export default function TodoList({

@@ -1,5 +1,4 @@
 import TodoList from './_components/TodoList';
-import { trpc } from './_trpc/client';
 import { serverClient } from './_trpc/serverClient';
 
 export const dynamic = 'force-dynamic';
