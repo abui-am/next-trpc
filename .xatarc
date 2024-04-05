@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Abui-s-workspace-603dfk.ap-southeast-2.xata.sh/db/trpc-example",
+  "codegen": {
+    "output": "src/server/xata.ts"
+  }
+}

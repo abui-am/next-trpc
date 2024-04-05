@@ -1,0 +1,16 @@
+{
+  "id": "mig_co7d59fqsqp1eea3ncu0",
+  "parentID": "mig_co7d577qsqp1eea3nct0",
+  "checksum": "1:830abad5316a3cbfb021dca9d7fbe0776a5a5c63c20cc66e57138228385ab10a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "content",
+          "type": "text"
+        },
+        "table": "todo"
+      }
+    }
+  ]
+}
