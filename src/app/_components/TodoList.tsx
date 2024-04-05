@@ -42,8 +42,6 @@ export default function TodoList({
           <textarea
             placeholder='Description'
             id='content'
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
             className='border w-full text-black bg-white rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 px-4 py-2'
           />
         </div>
