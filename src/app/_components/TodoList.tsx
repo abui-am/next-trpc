@@ -33,13 +33,22 @@ export default function TodoList({
   return (
     <div>
       <div className='flex gap-3 items-center'>
-        <label htmlFor='content'>Content</label>
-        <input
-          id='content'
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          className='flex-grow border text-black bg-white rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 px-4 py-2'
-        />
+        <div className='flex-grow '>
+          <input
+            placeholder='Title'
+            id='content'
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            className='border w-full mb-6 text-black bg-white rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 px-4 py-2'
+          />
+          <textarea
+            placeholder='Description'
+            id='content'
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            className='border w-full text-black bg-white rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 px-4 py-2'
+          />
+        </div>
         <button
           onClick={async () => {
             if (content.length) {
@@ -53,6 +62,7 @@ export default function TodoList({
         </button>
       </div>
       <div className='text-black my-5 text-3xl'>
+        <h2 className='text-md mb-6'>List of Todos </h2>
         {getTodos?.data?.map((todo) => (
           <div key={todo.id} className='flex gap-3 items-center'>
             <input
