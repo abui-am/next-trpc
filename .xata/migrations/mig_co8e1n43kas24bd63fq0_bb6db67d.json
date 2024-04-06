@@ -1,0 +1,16 @@
+{
+  "id": "mig_co8e1n43kas24bd63fq0",
+  "parentID": "mig_co83vkcq15ue0fjlfq8g",
+  "checksum": "1:bb6db67d1877eff6dfe61398d46192e62876616dfcb01a1a74c2ca5023f8e8c2",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "isVerified",
+          "type": "bool"
+        },
+        "table": "user"
+      }
+    }
+  ]
+}

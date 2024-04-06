@@ -13,6 +13,7 @@ const tables = [
       { name: "username", type: "string" },
       { name: "email", type: "string" },
       { name: "password", type: "string" },
+      { name: "isVerified", type: "bool" },
     ],
   },
   {
@@ -20,6 +21,7 @@ const tables = [
     columns: [
       { name: "content", type: "text" },
       { name: "done", type: "bool" },
+      { name: "description", type: "text" },
     ],
   },
 ] as const;

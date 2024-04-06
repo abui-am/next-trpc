@@ -27,7 +27,7 @@ export default function TodoList({
   });
 
   const [content, setContent] = useState('');
-
+  const [description, setDescription] = useState('');
   return (
     <div>
       <div className='flex gap-3 items-center'>
@@ -40,6 +40,10 @@ export default function TodoList({
             className='border w-full mb-6 text-black bg-white rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 px-4 py-2'
           />
           <textarea
+            onChange={(e) => {
+              setDescription(e.target.value);
+            }}
+            value={description}
             placeholder='Description'
             id='content'
             className='border w-full text-black bg-white rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 px-4 py-2'
@@ -48,7 +52,10 @@ export default function TodoList({
         <button
           onClick={async () => {
             if (content.length) {
-              addTodo.mutate(content);
+              addTodo.mutate({
+                content,
+                description,
+              });
               setContent('');
             }
           }}
@@ -73,7 +80,12 @@ export default function TodoList({
                 });
               }}
             />
-            <label htmlFor={`check-${todo.id}`}>{todo.content}</label>
+            <div>
+              <label htmlFor={`check-${todo.id}`} className='mb-2'>
+                {todo.content}
+              </label>
+              <p className='text-xs'>{todo.description ?? '-'}</p>
+            </div>
           </div>
         ))}
       </div>

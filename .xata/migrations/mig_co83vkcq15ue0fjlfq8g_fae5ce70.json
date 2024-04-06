@@ -1,0 +1,13 @@
+{
+  "id": "mig_co83vkcq15ue0fjlfq8g",
+  "parentID": "mig_co83qisq15ue0fjlfq7g",
+  "checksum": "1:fae5ce702f7fc9aa22759e9e58b9aa4d7ecd2794134676e43aeda3a8b98bad15",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "description",
+        "table": "todo"
+      }
+    }
+  ]
+}

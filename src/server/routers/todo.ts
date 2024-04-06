@@ -11,6 +11,7 @@ export const todoRouter = router({
       id: todo.id,
       content: todo.content,
       done: todo.done,
+      description: todo.description,
       xata: {
         id: todo.id,
         createdAt: todo.xata.createdAt.toISOString(),
@@ -19,10 +20,21 @@ export const todoRouter = router({
       },
     }));
   }),
-  addTodo: publicProcedure.input(z.string()).mutation(async (opts) => {
-    const res = await db.todo.create({ content: opts.input, done: false });
-    return res;
-  }),
+  addTodo: publicProcedure
+    .input(
+      z.object({
+        content: z.string(),
+        description: z.string().nullable(),
+      })
+    )
+    .mutation(async (opts) => {
+      const res = await db.todo.create({
+        content: opts.input.content,
+        description: opts.input.description,
+        done: false,
+      });
+      return res;
+    }),
   setDone: publicProcedure
     .input(
       z.object({
